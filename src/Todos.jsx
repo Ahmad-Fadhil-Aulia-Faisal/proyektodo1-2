@@ -2,9 +2,9 @@
 import React from 'react';
 import TodoItem from './TodoItem';
 
-function Todos({ todos, toggleTodo, deleteTodo }) {
+const Todos = ({ todos, toggleTodo, deleteTodo }) => {
     return (
-        <div className="Todos">
+        <div style={styles.todosContainer}>
             {todos.map((todo) => (
                 <TodoItem
                     key={todo.id}
@@ -15,6 +15,16 @@ function Todos({ todos, toggleTodo, deleteTodo }) {
             ))}
         </div>
     );
-}
+};
+
+const styles = {
+    todosContainer: {
+        width: '40%',
+        margin: '0 auto',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+};
 
 export default Todos;
