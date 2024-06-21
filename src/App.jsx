@@ -23,12 +23,30 @@ function App() {
     };
 
     return (
-        <div className="App">
-            <h1>Todo App</h1>
+        <div style={styles.container}>
+            <h1 style={styles.title}>My Todo List</h1>
             <TodoForm addTodo={addTodo} />
             <Todos todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
         </div>
     );
 }
+
+const styles = {
+    container: {
+        textAlign: 'center',
+        padding: '12px',
+        backgroundColor: '#ffffff',
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    title: {
+        fontSize: '36px',
+        color: '#000000',
+        marginBottom: '24px',
+    },
+};
 
 export default App;

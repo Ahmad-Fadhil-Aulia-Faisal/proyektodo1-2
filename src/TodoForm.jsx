@@ -19,16 +19,40 @@ function TodoForm({ addTodo }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} style={styles.form}>
             <input
                 type="text"
                 value={text}
                 onChange={(e) => setText(e.target.value)}
                 placeholder="Add a new todo"
+                style={styles.input}
             />
-            <button type="submit">Add Todo</button>
+            <button type="submit" style={styles.addButton}>Add Todo</button>
         </form>
     );
 }
+
+const styles = {
+    form: {
+        display: 'flex',
+        marginBottom: '24px',
+    },
+    input: {
+        flex: '1',
+        padding: '8px',
+        fontSize: '16px',
+        borderRadius: '4px 0 0 4px',
+        border: '1px solid #ccc',
+    },
+    addButton: {
+        padding: '8px 16px',
+        fontSize: '16px',
+        borderRadius: '0 4px 4px 0',
+        border: 'none',
+        backgroundColor: '#28a745',
+        color: 'white',
+        cursor: 'pointer',
+    },
+};
 
 export default TodoForm;
